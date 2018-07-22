@@ -1,5 +1,16 @@
-<p>
-  bestelling-form works!
-</p>
-<button mat-button>Click me!</button>
-<button mat-raised-button>and me ..</button>
+<div>
+  <form [formGroup]="bestellingForm" (ngSubmit)="onSubmit(bestellingForm.value)">
+
+    <mat-form-field>
+      <label for="naam">Naam</label>
+      <input id="naam" matInput formControlName="naam" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <label for="email">Email</label>
+      <input id="email" matInput formControlName="email" required>
+    </mat-form-field>
+  </form>
+
+  <button class="submit-btn" color="primary" mat-raised-button type="submit" [disabled]="!bestellingForm.valid">Submit</button>
+</div>
