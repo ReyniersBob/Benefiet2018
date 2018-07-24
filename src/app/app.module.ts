@@ -3,7 +3,14 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BestellingFormComponent} from './bestelling-form/bestelling-form.component';
-import {MatFormFieldModule, MatGridListModule, MatInputModule, MatSelectModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatGridListModule,
+  MatInputModule,
+  MatSelectModule,
+  MatSnackBarModule
+} from '@angular/material';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
@@ -31,7 +38,9 @@ import {RouterModule} from '@angular/router';
     MatInputModule,
     BrowserAnimationsModule,
     MatGridListModule,
-    RouterModule
+    RouterModule,
+    MatSnackBarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

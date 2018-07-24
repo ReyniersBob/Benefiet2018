@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   password: string = '';
 
 
-  constructor(private fire: AngularFireAuth) {
+  constructor(private fire: AngularFireAuth, private snackbar: MatSnackBar) {
   }
 
   ngOnInit() {
@@ -33,13 +34,13 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('uid', auth.uid);
           }
         });
-        console.log('login worked');
+        this.snackbar.open('login worked', 'close', {duration: 5000});
         // todo add navigation after succeeded
         // this.router.navigate(['app-bestelling-form']);
       }).catch(error => {
         // todo add popup when login denied
       console.error(error);
-      console.log('login denied');
+      this.snackbar.open('login denied', 'close', {duration: 5000});
     });
   }
 
