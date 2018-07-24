@@ -9,6 +9,7 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -19,14 +20,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserModule,
     MatFormFieldModule,
     MatSelectModule,
-    AngularFireModule.initializeApp({
-      apiKey: "AIzaSyDN4xVbtO8-Oevx0u1Svg0iFi-hulxosAA",
-      authDomain: "orderportal-ace32.firebaseapp.com",
-      databaseURL: "https://orderportal-ace32.firebaseio.com",
-      projectId: "orderportal-ace32",
-      storageBucket: "orderportal-ace32.appspot.com",
-      messagingSenderId: "103244401422"
-    }),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     FormsModule,
