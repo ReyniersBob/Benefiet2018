@@ -10,11 +10,14 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {environment} from '../environments/environment';
+import { LoginComponent } from './login/login.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BestellingFormComponent
+    BestellingFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import {environment} from '../environments/environment';
     ReactiveFormsModule,
     MatInputModule,
     BrowserAnimationsModule,
-    MatGridListModule
+    MatGridListModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
