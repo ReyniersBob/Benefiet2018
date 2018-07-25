@@ -4,7 +4,7 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {BestellingFormComponent} from './bestelling-form/bestelling-form.component';
 import {
-  MatButtonModule,
+  MatButtonModule, MatCardModule, MatDividerModule,
   MatFormFieldModule,
   MatGridListModule,
   MatInputModule,
@@ -40,7 +40,9 @@ import {RouterModule} from '@angular/router';
     MatGridListModule,
     RouterModule,
     MatSnackBarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

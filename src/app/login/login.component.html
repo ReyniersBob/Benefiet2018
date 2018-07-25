@@ -1,16 +1,24 @@
-<div>
-  <h3>Login</h3>
-  <div>
-    <mat-form-field>
-      <input matInput type="email" placeholder="Email" name="email" [(ngModel)]="email">
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field>
-      <input matInput type="password" placeholder="password" name="password" [(ngModel)]="password">
-    </mat-form-field>
-  </div>
-  <div>
-    <button mat-raised-button color="primary" (click)="myLogin()">Login</button>
-  </div>
+<div style="width: 200px">
+  <mat-card-title>
+    <h3 style="margin-left: 40px; margin-top: 10px; ">Login</h3>
+  </mat-card-title>
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <div>
+      <mat-form-field>
+        <input matInput type="email" placeholder="Email" name="email" [(ngModel)]="email">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput type="password" placeholder="password" name="password" [(ngModel)]="password">
+      </mat-form-field>
+    </div>
+    <mat-divider></mat-divider>
+  </mat-card-content>
+  <mat-card-actions>
+    <div style="margin-left: 40px; margin-top: 10px">
+      <button mat-raised-button color="primary" (click)="myLogin()">Login</button>
+    </div>
+  </mat-card-actions>
 </div>
