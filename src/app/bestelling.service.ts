@@ -28,7 +28,7 @@ export class BestellingService {
   }
 
   getBestellingsList(): AngularFireList<Bestelling> {
-    return this.bestellingsRef;
+    return this.db.list(this.dbPath);
   }
 
   private handleError(error) {

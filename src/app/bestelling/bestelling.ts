@@ -1,8 +1,9 @@
+import {Tijdstip} from '../tijdstip/tijdstip';
+
 export class Bestelling {
-  eetGroep: string;
+  eetGroep: Tijdstip;
   email: string;
   naam: string;
-  orderDate: Date;
   spaghetti: number;
   vegetarisch: number;
   stoofvlees: number;
