@@ -7,7 +7,7 @@ import {
   MatButtonModule, MatCardModule, MatDividerModule,
   MatFormFieldModule,
   MatGridListModule,
-  MatInputModule, MatRadioButton, MatRadioButton, MatRadioGroup,
+  MatInputModule, MatRadioButton, MatRadioGroup, MatRadioModule,
   MatSelectModule,
   MatSnackBarModule, MatTableModule
 } from '@angular/material';
@@ -48,7 +48,7 @@ import { AdminComponent } from './admin/admin.component';
     MatTableModule,
     MatSelectModule,
     MatRadioGroup,
-    MatRadioButton
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
