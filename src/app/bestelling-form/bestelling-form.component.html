@@ -1,16 +1,71 @@
 <div>
-  <form [formGroup]="bestellingForm" (ngSubmit)="onSubmit(bestellingForm.value)">
+  <form class="bestelfrom" [formGroup]="bestellingForm" (ngSubmit)="onSubmit(bestellingForm.value)">
 
-    <mat-form-field>
-      <label for="naam">Naam</label>
-      <input id="naam" matInput formControlName="naam" required>
-    </mat-form-field>
+    <mat-grid-list id="list1" cols="2" rowHeight="2:1">
 
-    <mat-form-field>
-      <label for="email">Email</label>
-      <input id="email" matInput formControlName="email" required>
-    </mat-form-field>
+      <mat-grid-tile>
+
+
+
+        <mat-form-field id="InputNaam">
+          <label for="naam">Naam</label>
+          <input id="naam" matInput formControlName="naam" required>
+        </mat-form-field>
+
+        <mat-form-field id="InputEmail">
+          <label for="email">Email</label>
+          <input id="email" matInput formControlName="email" required>
+        </mat-form-field>
+
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+
+        <mat-form-field id="InputTotPers">
+          <input id="TotaalPers" matInput type="number" placeholder="Aantal personen?">
+        </mat-form-field>
+
+        <mat-radio-group>
+          <mat-radio-button value="1">Zaterdag</mat-radio-button>
+          <mat-radio-button value="2">Zondag</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-select ng-model="Uur" placeholder="Hoelaat mogen wij u verwachten?" class="md-no-underline">
+          <mat-option value="12-14">12u tot 14u</mat-option>
+          <mat-option value="14-16">14u tot 16u</mat-option>
+          <mat-option value="16-18">16u tot 18u</mat-option>
+          <mat-option value="18-20">18u tot 20u</mat-option>
+          <mat-option value="20-22">20u tot 22u</mat-option>
+        </mat-select>
+
+      </mat-grid-tile>
+
+    </mat-grid-list>
+
+
+    <mat-grid-list id="list2" cols="3" rowHeight="2:1">
+      <mat-grid-tile>
+        <mat-form-field>
+          <input id="veggie" matInput type="number" placeholder="Aantal vegetariers">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <input id="kinderen" matInput type="number" placeholder="Aantal kinderen">
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <input id="Spaghetti's" matInput type="number" placeholder="Aantal spaghetti">
+        </mat-form-field>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+    <button class="submit-btn" color="primary" mat-raised-button type="submit" [disabled]="!bestellingForm.valid">Submit</button>
+
   </form>
 
-  <button class="submit-btn" color="primary" mat-raised-button type="submit" [disabled]="!bestellingForm.valid">Submit</button>
+
 </div>

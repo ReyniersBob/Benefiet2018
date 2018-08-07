@@ -1,3 +1,75 @@
-.colored-button{
-  color: brown;
+body{padding:0;margin: 0;}
+button{
+  position: relative;
+  background-color: brown;
+  margin: 0 auto;
+}
+div{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: ghostwhite;
+}
+form{
+  margin: 0 auto;
+  position: relative;
+  max-width:800px;
+  height: 600px;
+  /*background-color: darkgray;*/
+}
+
+mat-form-field{
+  position: relative;
+  text-align: center;
+
+
+
+}
+mat-grid-list{
+  margin: 0 auto;
+  position: relative;
+  /*background-color: blueviolet;*/
+}
+mat-grid-tile{
+  width: 150px;
+}
+#list1 mat-grid-tile{
+  background-color: pink;
+}
+#list1 mat-grid-tile  #InputNaam{
+  position: relative;
+  width: 100%;
+  display: block;
+  background-color: green;
+  /*height: 200px;*/
+}
+#list1 mat-grid-tile #InputEmail{
+  position: relative;
+  width: 100%;
+  display: block;
+  background-color: grey;
+  /*height: 200px;*/
+}
+#list1  mat-grid-tile #InputTotPers{
+  display: block;
+  background-color: red ;
+  height: 200px;
+}
+
+#list2 mat-grid-tile{
+  background-color: blue;
+
+
+}
+#list2 mat-grid-tile:nth-of-type(3){
+  background-color: pink;
+}
+#list2 mat-grid-tile:nth-of-type(4){
+  background-color: yellow;
+}
+#list2 mat-grid-tile:nth-of-type(5){
+  background-color: greenyellow;
+}
+.submit-btn{
+  position: relative;
 }
