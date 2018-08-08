@@ -22,15 +22,15 @@
       <mat-grid-tile>
 
         <mat-form-field id="InputTotPers">
-          <input id="TotaalPers" matInput type="number" placeholder="Aantal personen?">
+          <input id="TotaalPers" matInput formControlName="totaalPersonen" type="number" placeholder="Aantal personen?">
         </mat-form-field>
 
-        <mat-radio-group>
-          <mat-radio-button value="1">Zaterdag</mat-radio-button>
-          <mat-radio-button value="2">Zondag</mat-radio-button>
+        <mat-radio-group formControlName="dag">
+          <mat-radio-button value="zaterdag">Zaterdag</mat-radio-button>
+          <mat-radio-button value="zondag">Zondag</mat-radio-button>
         </mat-radio-group>
 
-        <mat-select ng-model="Uur" placeholder="Hoelaat mogen wij u verwachten?" class="md-no-underline">
+        <mat-select ng-model="Uur" placeholder="Hoelaat mogen wij u verwachten?" class="md-no-underline" formControlName="uur">
           <mat-option value="12-14">12u tot 14u</mat-option>
           <mat-option value="14-16">14u tot 16u</mat-option>
           <mat-option value="16-18">16u tot 18u</mat-option>
@@ -46,19 +46,19 @@
     <mat-grid-list id="list2" cols="3" rowHeight="2:1">
       <mat-grid-tile>
         <mat-form-field>
-          <input id="veggie" matInput type="number" placeholder="Aantal vegetariers">
+          <input id="veggie" formControlName="aantalVeg" matInput type="number" placeholder="Aantal vegetariers">
         </mat-form-field>
       </mat-grid-tile>
 
       <mat-grid-tile>
         <mat-form-field>
-          <input id="kinderen" matInput type="number" placeholder="Aantal kinderen">
+          <input id="kinderen" formControlName="aantalKinderen" matInput type="number" placeholder="Aantal kinderen">
         </mat-form-field>
       </mat-grid-tile>
 
       <mat-grid-tile>
         <mat-form-field>
-          <input id="Spaghetti's" matInput type="number" placeholder="Aantal spaghetti">
+          <input id="Spaghetti's" formControlName="aantalSpaghetti" matInput type="number" placeholder="Aantal spaghetti">
         </mat-form-field>
       </mat-grid-tile>
 

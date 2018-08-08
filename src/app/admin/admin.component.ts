@@ -30,14 +30,14 @@ export class AdminComponent implements OnInit {
   }
 
   printBestellingen() {
-    const bestelling = new Bestelling();
-    bestelling.email = 'test@test.be';
-    bestelling.naam = 'test1';
-    bestelling.eetGroep = Tijdstip.ZATERDAG_12;
-    bestelling.spaghetti = 2;
-    bestelling.stoofvlees = 4;
-    bestelling.vegetarisch = 1;
-    this.service.createBestelling(bestelling);
-    console.log(this.service.getBestellingsList());
+    // const bestelling = new Bestelling();
+    // bestelling.email = 'test@test.be';
+    // bestelling.naam = 'test1';
+    // bestelling.eetGroep = Tijdstip.ZATERDAG_12;
+    // bestelling.spaghetti = 2;
+    // bestelling.stoofvlees = 4;
+    // bestelling.vegetarisch = 1;
+    // this.service.createBestelling(bestelling);
+    // console.log(this.service.getBestellingsList());
   }
 }

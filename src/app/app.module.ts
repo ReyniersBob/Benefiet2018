@@ -47,7 +47,6 @@ import { AdminComponent } from './admin/admin.component';
     MatDividerModule,
     MatTableModule,
     MatSelectModule,
-    MatRadioGroup,
     MatRadioModule
   ],
   providers: [],

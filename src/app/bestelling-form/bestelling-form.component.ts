@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BestellingService} from '../bestelling.service';
 import {Bestelling} from '../bestelling/bestelling';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-bestelling-form',
@@ -14,8 +14,14 @@ export class BestellingFormComponent implements OnInit {
   submitted: boolean;
 
   bestellingForm = new FormGroup({
-    email: new FormControl(''),
-    naam: new FormControl('')
+    email: new FormControl('', [Validators.required, Validators.email]),
+    naam: new FormControl('', Validators.required),
+    totaalPersonen: new FormControl('', Validators.required),
+    dag: new FormControl('', Validators.required),
+    uur: new FormControl('', Validators.required),
+    aantalVeg: new FormControl(''),
+    aantalKinderen: new FormControl(''),
+    aantalSpaghetti: new FormControl('')
   });
 
   constructor(private service: BestellingService) { }
@@ -35,8 +41,9 @@ export class BestellingFormComponent implements OnInit {
 
   onSubmit(bestelling: Bestelling) {
     console.log(bestelling);
+    this.bestelling = bestelling;
     // this.submitted = true;
-    // this.saveBestelling();
+    this.saveBestelling();
   }
 
 }
