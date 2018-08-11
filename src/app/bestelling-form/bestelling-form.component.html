@@ -1,44 +1,49 @@
 <div id="mainWrapper">
-  <form class="bestelfrom" [formGroup]="bestellingForm" (ngSubmit)="onSubmit(bestellingForm.value)">
+  <form id="bestelfrom" [formGroup]="bestellingForm" (ngSubmit)="onSubmit(bestellingForm.value)">
 
-    <mat-grid-list id="list1" cols="2" rowHeight="2:1">
+    <mat-grid-list id="list1" cols="2" rowHeight="200px" >
 
-      <mat-grid-tile>
-
-
-
+      <mat-grid-tile [colspan]="1" >
         <mat-form-field id="InputNaam">
-          <label for="naam">Naam</label>
-          <input id="naam" matInput formControlName="naam" required>
+          <input id="naam" placeholder="Groeps naam" matInput formControlName="naam" required>
         </mat-form-field>
-
-        <mat-form-field id="InputEmail">
-          <label for="email">Email</label>
-          <input id="email" matInput formControlName="email" required>
-        </mat-form-field>
-
       </mat-grid-tile>
 
-      <mat-grid-tile>
-
+      <mat-grid-tile [colspan]="1">
         <mat-form-field id="InputTotPers">
           <input id="TotaalPers" matInput type="number" placeholder="Aantal personen?">
         </mat-form-field>
+      </mat-grid-tile>
 
-        <mat-radio-group formControlName="dag">
-          <mat-radio-button value="zaterdag">Zaterdag</mat-radio-button>
-          <mat-radio-button value="zondag">Zondag</mat-radio-button>
-        </mat-radio-group>
+      <mat-grid-tile [colspan]="1">
+        <mat-form-field id="InputEmail" placeholder="Email">
 
-        <mat-select ng-model="Uur" placeholder="Hoelaat mogen wij u verwachten?" class="md-no-underline" formControlName="uur">
+          <input id="email" matInput formControlName="email" required>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1">
+        <mat-select ng-model="Uur" placeholder="Uur?" class="md-no-underline" formControlName="uur">
           <mat-option value="12-14">12u tot 14u</mat-option>
           <mat-option value="14-16">14u tot 16u</mat-option>
           <mat-option value="16-18">16u tot 18u</mat-option>
           <mat-option value="18-20">18u tot 20u</mat-option>
           <mat-option value="20-22">20u tot 22u</mat-option>
         </mat-select>
-
       </mat-grid-tile>
+
+
+
+
+          <mat-grid-tile [colspan]="1">
+        <mat-radio-group formControlName="dag">
+          <mat-radio-button value="zaterdag">Zaterdag</mat-radio-button>
+          <mat-radio-button value="zondag">Zondag</mat-radio-button>
+        </mat-radio-group>
+          </mat-grid-tile>
+
+
+
 
     </mat-grid-list>
 
