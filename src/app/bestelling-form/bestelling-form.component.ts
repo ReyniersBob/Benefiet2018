@@ -14,7 +14,7 @@ export class BestellingFormComponent implements OnInit {
   submitted: boolean;
 
   bestellingForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
+    email: new FormControl('', [Validators.required]),
     naam: new FormControl('', Validators.required),
     totaalPersonen: new FormControl('', Validators.required),
     dag: new FormControl('', Validators.required),

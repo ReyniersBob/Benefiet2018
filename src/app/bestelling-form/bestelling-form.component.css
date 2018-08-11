@@ -32,9 +32,15 @@ mat-form-field {
 .mat-grid-list {
   position: relative;
 }
+
 #naam{
   font-size:50px;
+}
+
+mat-form-field{
+  width: 100% !important;
   background-color: pink;
+  margin-top: 0px;
 }
 
 #TotaalPers{
@@ -43,9 +49,10 @@ mat-form-field {
 }
 
 #email{
-  font-size:50px;
+  font-size:25px;
   background-color: green;
 }
+
 mat-grid-tile:nth-of-type(1){
   background-color: green;
 
