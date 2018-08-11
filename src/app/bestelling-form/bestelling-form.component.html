@@ -5,37 +5,39 @@
 
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-form-field id="InputNaam">
-          <input id="naam" placeholder="Groeps naam" matInput formControlName="naam" required>
+          <input id="naam" placeholder="Groeps naam" matInput class="md-no-underline" formControlName="naam" required>
         </mat-form-field>
       </mat-grid-tile>
 
       <mat-grid-tile [colspan]="1" [rowspan]="2">
         <mat-form-field id="InputTotPers">
-          <input id="TotaalPers" matInput type="number" placeholder="Aantal personen?">
+          <input id="TotaalPers" matInput type="number" class="md-no-underline" placeholder="Aantal personen?">
         </mat-form-field>
       </mat-grid-tile>
 
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-form-field id="InputEmail">
 
-          <input id="email" matInput placeholder="Email" formControlName="email" required>
+          <input id="email" matInput placeholder="Email" class="md-no-underline" formControlName="email" required>
         </mat-form-field>
       </mat-grid-tile>
     </mat-grid-list>
 
-    <mat-grid-list id="list" cols="2" rowHeight="50px">
+    <mat-grid-list id="list" cols="2" rowHeight="75px">
       <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <mat-select ng-model="Uur" placeholder="Uur?" class="md-no-underline" formControlName="uur">
-          <mat-option value="12-14">12u tot 14u</mat-option>
-          <mat-option value="14-16">14u tot 16u</mat-option>
-          <mat-option value="16-18">16u tot 18u</mat-option>
-          <mat-option value="18-20">18u tot 20u</mat-option>
-          <mat-option value="20-22">20u tot 22u</mat-option>
-        </mat-select>
+        <mat-form-field>
+          <mat-select ng-model="Uur" id="uur" placeholder="Uur?" class="md-no-underline" formControlName="uur">
+            <mat-option value="12-14">12u tot 14u</mat-option>
+            <mat-option value="14-16">14u tot 16u</mat-option>
+            <mat-option value="16-18">16u tot 18u</mat-option>
+            <mat-option value="18-20">18u tot 20u</mat-option>
+            <mat-option value="20-22">20u tot 22u</mat-option>
+          </mat-select>
+        </mat-form-field>
       </mat-grid-tile>
 
       <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <mat-radio-group formControlName="dag">
+        <mat-radio-group formControlName="dag" id="dag">
           <mat-radio-button value="zaterdag">Zaterdag</mat-radio-button>
           <mat-radio-button value="zondag">Zondag</mat-radio-button>
         </mat-radio-group>
@@ -63,7 +65,7 @@
       </mat-grid-tile>
 
     </mat-grid-list>
-    <button class="submit-btn" color="primary" mat-raised-button type="submit">Submit</button>
+    <button id="submitBtn" class="submit-btn" color="primary" mat-raised-button type="submit">Submit</button>
 
   </form>
 

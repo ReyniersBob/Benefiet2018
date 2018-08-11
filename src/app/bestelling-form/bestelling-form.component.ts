@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {BestellingService} from '../bestelling.service';
 import {Bestelling} from '../bestelling/bestelling';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
@@ -9,6 +9,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./bestelling-form.component.css']
 })
 export class BestellingFormComponent implements OnInit {
+
 
   bestelling: Bestelling = new Bestelling();
   submitted: boolean;
@@ -27,6 +28,7 @@ export class BestellingFormComponent implements OnInit {
   constructor(private service: BestellingService) { }
 
   ngOnInit() {
+
   }
 
   newBestelling(): void {
