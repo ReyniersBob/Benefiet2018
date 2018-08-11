@@ -27,6 +27,7 @@ background-image: url('../resources/sunrise.jpeg');
 
 mat-form-field {
   text-align: center;
+  -webkit-logical-height: 200px
 
 }
 .mat-grid-list {
