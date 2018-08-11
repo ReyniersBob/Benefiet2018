@@ -27,7 +27,10 @@ background-image: url('../resources/sunrise.jpeg');
 
 mat-form-field {
   text-align: center;
-  -webkit-logical-height: 200px
+  logical-height: 200px;
+  -webkit-logical-height: 200px;
+  -moz-logical-height: 200px;
+  -o-logical-height: 200px;
 
 }
 .mat-grid-list {
