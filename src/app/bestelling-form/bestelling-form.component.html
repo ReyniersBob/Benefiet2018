@@ -3,26 +3,26 @@
 
     <mat-grid-list id="list1" cols="2" rowHeight="200px" >
 
-      <mat-grid-tile [colspan]="1" >
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-form-field id="InputNaam">
           <input id="naam" placeholder="Groeps naam" matInput formControlName="naam" required>
         </mat-form-field>
       </mat-grid-tile>
 
-      <mat-grid-tile [colspan]="1">
+      <mat-grid-tile [colspan]="1" [rowspan]="2">
         <mat-form-field id="InputTotPers">
           <input id="TotaalPers" matInput type="number" placeholder="Aantal personen?">
         </mat-form-field>
       </mat-grid-tile>
 
-      <mat-grid-tile [colspan]="1">
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-form-field id="InputEmail">
 
           <input id="email" matInput placeholder="Email" formControlName="email" required>
         </mat-form-field>
       </mat-grid-tile>
 
-      <mat-grid-tile [colspan]="1">
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-select ng-model="Uur" placeholder="Uur?" class="md-no-underline" formControlName="uur">
           <mat-option value="12-14">12u tot 14u</mat-option>
           <mat-option value="14-16">14u tot 16u</mat-option>
@@ -35,7 +35,7 @@
 
 
 
-          <mat-grid-tile [colspan]="1">
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-radio-group formControlName="dag">
           <mat-radio-button value="zaterdag">Zaterdag</mat-radio-button>
           <mat-radio-button value="zondag">Zondag</mat-radio-button>
