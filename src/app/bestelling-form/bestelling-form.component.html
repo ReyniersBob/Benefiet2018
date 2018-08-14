@@ -1,5 +1,6 @@
 <div id="mainWrapper">
   <form id="bestelfrom" [formGroup]="bestellingForm" (ngSubmit)="onSubmit(bestellingForm.value)">
+    <p>Bennefiet4Lyme</p>
 
     <mat-grid-list id="list1" cols="2" rowHeight="100px">
 
@@ -45,7 +46,7 @@
     </mat-grid-list>
 
 
-    <mat-grid-list id="list2" cols="3" rowHeight="50px">
+    <mat-grid-list id="list2" cols="3" rowHeight="150px">
       <mat-grid-tile>
         <mat-form-field>
           <input id="veggie" matInput type="number" placeholder="Aantal vegetariers">
@@ -65,8 +66,10 @@
       </mat-grid-tile>
 
     </mat-grid-list>
-    <button id="submitBtn" class="submit-btn" color="primary" mat-raised-button type="submit">Submit</button>
 
+    <mat-grid-list cols="1" rowHeight="80px">
+    <button id="submitBtn" class="submit-btn" color="primary" mat-raised-button type="submit">Verzenden</button>
+    </mat-grid-list>
   </form>
 
 
