@@ -59,13 +59,13 @@ p{
 
 .mat-grid-list {
   position: relative;
-  top:0px;
+  top:0;
 }
 
 #naam{
   height: 50px;
   font-size:30px;
-  background-color: rgb(252, 255, 252);
+  background-color: red;
 }
 
 mat-form-field{
@@ -76,30 +76,31 @@ mat-form-field{
 #TotaalPers{
   padding-top: 10px;
   font-size: 120px !important;
-  background-color: rgb(252, 255, 252);
 }
 
 #email{
-  width: auto;
+  width: auto !important;
   padding: 10px;
   font-size:15px;
-  background-color: rgb(252, 255, 252);
+
 }
-#email .mat-form-field-infix{
-  width: auto !important;
-}
+
 
 #uur {
   padding:10px;
   width: 85% !important;
   font-size: 15px;
-  background-color: rgb(252, 255, 252);
+  background-color: rgba(252,255,252,0.25);
+}
+#dag.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: #3D3C3A !important;
 }
 
 #dag {
   height: 50px;
   font-size: 14px;
-  background-color: rgb(252, 255, 252);
+  background-color: rgba(252,255,252,0.25);
+
 
 }
 
@@ -110,17 +111,19 @@ mat-radio-button {
 
 }
 
-.list .list2 .list3{
-  height: 50px;
-}
-
-
 .mat-input-element{
-  background-color: rgb(252, 255, 252) !important;
+  background-color: rgba(252,255,252,0.25) !important;
 
 }
-.list2 mat-grid-tile{
+#spaghetti.mat-input-element {
+  font-size: 70px !important;
 
+}
+#veggie.mat-input-element {
+  font-size: 70px !important;
+}
+#kinderen.mat-input-element {
+  font-size: 70px !important;
 }
 #submitBtn {
   height: 50px;
@@ -128,7 +131,7 @@ mat-radio-button {
   position: relative;
   left: 50%;
   margin-left: -115px;
-  bottom:0px !important;
+  top:16px !important;
   background-color: rgb(237, 255, 235);
   color: #3D3C3A;
   font-family: "Architects Daughter", serif;
