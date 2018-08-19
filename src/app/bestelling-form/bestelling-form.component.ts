@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {BestellingService} from '../bestelling.service';
 import {Bestelling} from '../bestelling/bestelling';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-bestelling-form',
@@ -25,7 +26,7 @@ export class BestellingFormComponent implements OnInit {
     aantalSpaghetti: new FormControl('')
   });
 
-  constructor(private service: BestellingService) { }
+  constructor(private service: BestellingService, private snackbar: MatSnackBar) { }
 
   ngOnInit() {
 
@@ -38,6 +39,7 @@ export class BestellingFormComponent implements OnInit {
 
   saveBestelling() {
     this.service.createBestelling(this.bestelling);
+    this.snackbar.open('U reservatie is verzonden, controleer het ingegeven email adres of deze gelukt is!', 'close');
     this.bestelling = new Bestelling();
   }
 
