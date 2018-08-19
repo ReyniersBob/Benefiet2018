@@ -76,15 +76,18 @@ mat-form-field{
 #TotaalPers{
   padding-top: 10px;
   font-size: 120px !important;
+
 }
 
 #email{
-  width: auto !important;
+  width: 100% !important;
   padding: 10px;
   font-size:15px;
 
 }
-
+#InputEmail{
+  width: 100%;
+}
 
 #uur {
   padding:10px;
@@ -97,7 +100,7 @@ mat-form-field{
 }
 
 #dag {
-  height: 50px;
+  height: auto;
   font-size: 14px;
   background-color: rgba(252,255,252,0.25);
 
