@@ -14,7 +14,6 @@ const mailTransport = nodemailer.createTransport({
         pass: gmailPassword,
     },
 });
-// Sends an email confirmation when a user changes his mailing list subscription.
 exports.sendEmailConfirmation = functions.database.ref('/bestelling/{uid}').onWrite((change, event) => {
     const val = change.after.val();
     const email = val.email;
