@@ -43,7 +43,7 @@ export class BestellingFormComponent implements OnInit {
       this.snackbar.open('U reservatie is verzonden, controleer het ingegeven email adres of deze gelukt is!', 'close');
       this.bestelling = new Bestelling();
     } else {
-      this.snackbar.open('U aantal personen komt niet overeen met het aantal bestelde gerechten.');
+      this.snackbar.open('U aantal personen komt niet overeen met het aantal bestelde gerechten.', 'close');
     }
   }
 
