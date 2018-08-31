@@ -23,11 +23,28 @@ exports.sendEmailConfirmation = functions.database.ref('/bestelling/{uid}').onWr
     from: '"Benefiet4Lyme 2018." <noreply@firebase.com>',
     to: email,
     subject: '',
-    text: ''
-  };
+    html: '',
+
+    attachments: [{
+      filename: 'Logo.png',
+      filePath: 'Logo.png',
+        cid: 'logo'
+    }]};
+
   // Building Email message.
   mailOptions.subject = 'Benefiet 4 Lyme reservatie!';
-  mailOptions.text = 'Bedankt voor je reservatie: ' + val.totaalPersonen + ' personen ' + val.dag + ' om ' + val.uur + ', ' + val.aantalVeg + ' veggie, ' + val.aantalKinderen + ' kinderen, ' + val.aantalSpaghetti + ' spaghetti';
+  mailOptions.html =
+    '<div style="position:absolute; text-align: center; background-color: #f8fffc; padding: 50px; width: 400px; margin: 0 auto;" >' + '<img id="logo" src="cid:logo" style="position:relative; height: 50px; width: 100px; top:0px; left:0px; background-color: #151515; display: inline-block;">  </img>' +
+    '<p style="position:relative; font-size: 18px; top: 0px; display: inline-block; padding: 10px;"> Beste ' +  val.naam +
+    'bedankt voor je reservatie. ' +
+    'Wij hebben het volgende genoteerd: ' + '</p>' +
+
+    '<p style="position:relative; font-size: 16px; text-align: left; display: inline-block; line-height: 120%; padding: 10px;">' + 'Totaal aantal personen ' + val.totaalPersonen +
+    '<br />Aantal veggie ' + val.aantalVeg  +
+    '<br />Aantal kinderen ' + val.aantalKinderen +
+    '<br />Aantal spaghetti ' + val.aantalSpaghetti + '</p>' +
+    '<p style="position: relative; font-size: 18px;">Vriendelijke groeten <br />Benefiet4Lyme</p>' +
+    '</div>';
   try {
     mailTransport.sendMail(mailOptions);
     console.log(email);
