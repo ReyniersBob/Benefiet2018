@@ -17,6 +17,21 @@ background-image: url('../resources/sunrise.jpeg');
   top:0px;
 
 }
+#GoTO {
+  font-family: "Architects Daughter", serif;  font-size: 35px;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  float: right;
+  border-radius: 10px;
+  border: 1px #d4d4d4 solid;
+  cursor: pointer;
+  background-color: #151515;
+  color: #FFF;
+  z-index: 10;
+  text-align: center;
+  padding: 10px;
+}
 p{
   width: 100%;
   height: auto;
@@ -140,4 +155,8 @@ mat-radio-button {
   font-family: "Architects Daughter", serif;
 
 
+}
+.mat-select-value{
+  color: #3D3C3A;
+  font-family: "Architects Daughter", serif;
 }
