@@ -38,9 +38,13 @@ export class BestellingFormComponent implements OnInit {
   }
 
   saveBestelling() {
-    this.service.createBestelling(this.bestelling);
-    this.snackbar.open('U reservatie is verzonden, controleer het ingegeven email adres of deze gelukt is!', 'close');
-    this.bestelling = new Bestelling();
+    if (this.totaalPersonenValidatie(this.bestelling)) {
+      this.service.createBestelling(this.bestelling);
+      this.snackbar.open('U reservatie is verzonden, controleer het ingegeven email adres of deze gelukt is!', 'close');
+      this.bestelling = new Bestelling();
+    } else {
+      this.snackbar.open('U aantal personen komt niet overeen met het aantal bestelde gerechten.', 'close');
+    }
   }
 
   onSubmit(bestelling: Bestelling) {
@@ -50,4 +54,9 @@ export class BestellingFormComponent implements OnInit {
     this.saveBestelling();
   }
 
+  private totaalPersonenValidatie(bestelling: Bestelling): boolean {
+    const totaalPersonenReservatie = bestelling.aantalKinderen + bestelling.aantalSpaghetti + bestelling.aantalVeg;
+    const totaalPersonen = bestelling.totaalPersonen;
+    return totaalPersonenReservatie === totaalPersonen;
+  }
 }
