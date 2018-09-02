@@ -34,9 +34,9 @@ exports.sendEmailConfirmation = functions.database.ref('/bestelling/{uid}').onWr
   // Building Email message.
   mailOptions.subject = 'Benefiet 4 Lyme reservatie!';
   mailOptions.html =
-    '<div style="position:absolute; text-align: center; background-color: #f8fffc; padding: 50px; width: 400px; margin: 0 auto;" >' + '<img id="logo" src="cid:logo" style="position:relative; height: 50px; width: 100px; top:0px; left:0px; background-color: #151515; display: inline-block;">  </img>' +
+    '<div style="position:absolute; text-align: center; background-color: #FCF6D9; padding: 50px; width: 400px; margin: 0 auto;" >' + '<img id="logo" src="cid:logo" style="position:relative; height: 50px; width: 100px; top:0px; left:0px; background-color: #151515; display: inline-block;">  </img>' +
     '<p style="position:relative; font-size: 18px; top: 0px; display: inline-block; padding: 10px;"> Beste ' +  val.naam +
-    'bedankt voor je reservatie. ' +
+    ', bedankt voor je reservatie. <br /> ' +
     'Wij hebben het volgende genoteerd: ' + '</p>' +
 
     '<p style="position:relative; font-size: 16px; text-align: left; display: inline-block; line-height: 120%; padding: 10px;">' + 'Totaal aantal personen ' + val.totaalPersonen +

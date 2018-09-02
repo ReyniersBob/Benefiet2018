@@ -3,6 +3,7 @@ import {BestellingService} from '../bestelling.service';
 import {Bestelling} from '../bestelling/bestelling';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material';
+import {AngularFireList} from "angularfire2/database";
 
 @Component({
   selector: 'app-bestelling-form',
