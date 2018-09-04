@@ -62,8 +62,15 @@ p{
   -moz-logical-height: 13px;
   -o-logical-height: 13px;
   font-family: "Architects Daughter", serif;
+}
 
-
+.mat-label{
+  text-align: center;
+  logical-height: 13px;
+  -webkit-logical-height: 13px;
+  -moz-logical-height: 13px;
+  -o-logical-height: 13px;
+  font-family: "Architects Daughter", serif;
 }
 
 .mat-form-field-appearance-legacy {

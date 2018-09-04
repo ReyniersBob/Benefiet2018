@@ -9,6 +9,7 @@ export class Bestelling {
   aantalVeg: number;
   aantalKinderen: number;
   aantalSpaghetti: number;
+  totaalBedrag: number;
   // eetGroep: Tijdstip;
   // email: string;
   // naam: string;
