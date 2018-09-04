@@ -63,7 +63,13 @@ export class BestellingFormComponent implements OnInit {
   }
 
   private totaalPersonenValidatie(bestelling: Bestelling): boolean {
-    const totaalPersonenReservatie = bestelling.aantalKinderen + bestelling.aantalSpaghetti + bestelling.aantalVeg;
+    const aantalKinderen = bestelling.aantalKinderen ? bestelling.aantalKinderen : 0;
+    console.log(aantalKinderen);
+    const aantalSpaghetti = bestelling.aantalSpaghetti ? bestelling.aantalSpaghetti : 0;
+    console.log(aantalSpaghetti);
+    const aantalVeg = bestelling.aantalVeg ? bestelling.aantalVeg : 0;
+    console.log(aantalVeg);
+    const totaalPersonenReservatie = aantalKinderen + aantalSpaghetti + aantalVeg;
     const totaalPersonen = bestelling.totaalPersonen;
     return totaalPersonenReservatie === totaalPersonen;
   }
