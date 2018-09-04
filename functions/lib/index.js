@@ -38,11 +38,11 @@ exports.sendEmailConfirmation = functions.database.ref('/bestelling/{uid}').onWr
             ', bedankt voor je reservatie. <br /> ' +
             'Wij hebben het volgende genoteerd: ' + '</p>' +
             '<p style="position:relative; font-size: 16px; text-align: left; display: inline-block; line-height: 120%; padding: 10px;">' + 'Totaal aantal personen ' + val.totaalPersonen +
-            '<br /> val.dag' + ' om ' + val.uur +
+            '<br />' + val.dag + ' om ' + val.uur +
             '<br />Aantal veggie ' + val.aantalVeg +
             '<br />Aantal kinderen ' + val.aantalKinderen +
             '<br />Aantal spaghetti ' + val.aantalSpaghetti +
-            '<br />Totaal prijs e ' + val.totaalPrijs + '</p>' +
+            '<br />Totaal prijs €' + val.totaalBedrag + '</p>' +
             '<p style="position: relative; font-size: 18px;">Vriendelijke groeten <br />Benefiet4Lyme</p>' +
             '</div>';
     try {
