@@ -1,4 +1,6 @@
 'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
+const fs = require("fs");
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 admin.initializeApp();
@@ -25,7 +27,7 @@ exports.sendEmailConfirmation = functions.database.ref('/bestelling/{uid}').onWr
         html: '',
         attachments: [{
                 filename: 'Logo.png',
-                filePath: 'Logo.png',
+                content: fs.createReadStream('src/Logo.png'),
                 cid: 'logo'
             }]
     };
@@ -33,8 +35,29 @@ exports.sendEmailConfirmation = functions.database.ref('/bestelling/{uid}').onWr
     mailOptions.subject = 'Benefiet 4 Lyme reservatie!';
     // noinspection TsLint
     mailOptions.html =
-        '<div style="position:absolute; text-align: center; background-color: #FCF6D9; padding: 50px; width: 400px; margin: 0 auto;" >' + '<img id="logo" src="cid:logo" style="position:relative; height: 50px; width: 100px; top:0px; left:0px; background-color: #151515; display: inline-block;">  </img>' +
+        '<div style="position:absolute; text-align: center; background-color: #FCF6D9; padding: 50px; width: 400px; margin: 0 auto;" >' + '<img id="logo" src="cid:logo" style="position:relative; height: 50px; width: 100px; top:0px; left:0px; background-color: #151515; display: inline-block;"/>  ' +
             '<p style="position:relative; font-size: 18px; top: 0px; display: inline-block; padding: 10px;"> Beste ' + val.naam +
+            ', bedankt voor je reservatie. <br /> ' +
+            'Wij hebben het volgende genoteerd: ' + '</p>' +
+            '<p style="position:relative; font-size: 16px; text-align: left; display: inline-block; line-height: 120%; padding: 10px;">' + 'Totaal aantal personen ' + val.totaalPersonen +
+            '<br />' + val.dag + ' om ' + val.uur +
+            '<br />Aantal veggie ' + val.aantalVeg +
+            '<br />Aantal kinderen ' + val.aantalKinderen +
+            '<br />Aantal spaghetti ' + val.aantalSpaghetti +
+            '<br />Totaal prijs €' + val.totaalBedrag + '</p>' +
+            '<p style="position: relative; font-size: 18px;">Vriendelijke groeten <br />Benefiet4Lyme</p>' +
+            '</div>';
+    const mailOptions2 = {
+        from: '"Benefiet4Lyme 2018." <noreply@firebase.com>',
+        to: 'benefiet4lyme@gmail.com',
+        subject: '',
+        html: '',
+    };
+    // Building Email message.
+    mailOptions2.subject = 'Benefiet 4 Lyme reservatie!';
+    // noinspection TsLint
+    mailOptions2.html =
+        '<p style="position:relative; font-size: 18px; top: 0px; display: inline-block; padding: 10px;"> Beste ' + val.naam +
             ', bedankt voor je reservatie. <br /> ' +
             'Wij hebben het volgende genoteerd: ' + '</p>' +
             '<p style="position:relative; font-size: 16px; text-align: left; display: inline-block; line-height: 120%; padding: 10px;">' + 'Totaal aantal personen ' + val.totaalPersonen +
@@ -47,6 +70,7 @@ exports.sendEmailConfirmation = functions.database.ref('/bestelling/{uid}').onWr
             '</div>';
     try {
         mailTransport.sendMail(mailOptions);
+        mailTransport.sendMail(mailOptions2);
         console.log(email);
     }
     catch (error) {
