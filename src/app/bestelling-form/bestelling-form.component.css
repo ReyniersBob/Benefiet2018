@@ -1,8 +1,9 @@
-body{padding:0; margin: 0;}
+body{padding:0; margin: 0;
+}
 
 #mainWrapper{
 position: absolute;
-background-image: url('../resources/sunrise.jpeg');
+  background-image: url('../resources/sunrise.jpeg');
   background-position: left center;
   background-repeat: no-repeat;
   background-size: cover;

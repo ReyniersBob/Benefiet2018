@@ -1,40 +1,37 @@
-<p>
-  <button (click)="getAlleBestellingenPerTijdstip()">Click me</button>
-</p>
-<mat-table datasrc="bestellingen" class="mat-elevation-8">
+<mat-table  class="mat-elevation-8">
   <ng-container matColumnDef="eetGroep">
-    <th mat-header-cell *matHeaderCellDef> Eetgroep </th>
-    <td mat-cell *matCellDef="let bestelling"> {{bestelling.eetGroep}} </td>
+    <mat-header-cell *matHeaderCellDef> Eetgroep </mat-header-cell>
+    <mat-cell *matCellDef='let bestelling'> {{bestelling.eetGroep}} </mat-cell>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="email">
-    <th mat-header-cell *matHeaderCellDef> Email </th>
-    <td mat-cell *matCellDef="let bestelling"> {{bestelling.email}} </td>
+    <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+    <mat-cell *matCellDef="let bestelling"> {{bestelling.email}} </mat-cell>
   </ng-container>
 
   <!-- Weight Column -->
   <ng-container matColumnDef="naam">
-    <th mat-header-cell *matHeaderCellDef> Naam </th>
-    <td mat-cell *matCellDef="let bestelling"> {{bestelling.naam}} </td>
+    <mat-header-cell *matHeaderCellDef> Naam </mat-header-cell>
+    <mat-cell *matCellDef="let bestelling"> {{bestelling.naam}} </mat-cell>
   </ng-container>
 
   <!-- Symbol Column -->
   <ng-container matColumnDef="spaghetti">
-    <th mat-header-cell *matHeaderCellDef> Spaghetti </th>
-    <td mat-cell *matCellDef="let bestelling"> {{bestelling.spaghetti}} </td>
+    <mat-header-cell *matHeaderCellDef> Spaghetti </mat-header-cell>
+    <mat-cell *matCellDef="let bestelling"> {{bestelling.spaghetti}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="vegetarisch">
-    <th mat-header-cell *matHeaderCellDef> Vegetarisch </th>
-    <td mat-cell *matCellDef="let bestelling"> {{bestelling.vegetarisch}} </td>
+    <mat-header-cell *matHeaderCellDef> Vegetarisch </mat-header-cell>
+    <mat-cell *matCellDef="let bestelling"> {{bestelling.vegetarisch}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="stoofvlees">
-    <th mat-header-cell *matHeaderCellDef> Stoofvlees </th>
+    <mat-header-cell *matHeaderCellDef> Stoofvlees </mat-header-cell>
     <td mat-cell *matCellDef="let bestelling"> {{bestelling.stoofvlees}} </td>
   </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
