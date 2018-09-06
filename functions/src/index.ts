@@ -37,7 +37,7 @@ exports.sendEmailConfirmation = functions.database.ref('/bestelling/{uid}').onWr
   mailOptions.subject = 'Benefiet 4 Lyme reservatie!';
   // noinspection TsLint
   mailOptions.html =
-    '<div style="position:absolute; text-align: center; background-color: #FCF6D9; padding: 50px; width: 400px; margin: 0 auto;" >' + '<img id="logo" src="cid:logo" style="position:relative; height: 50px; width: 100px; top:0px; left:0px; background-color: #151515; display: inline-block;"/>  ' +
+    '<div style="position:absolute; text-align: center; background-color: #FCF6D9; padding: 50px; width: 400px; margin: 0 auto;" >' + '<img id="logo" src="cid:logo" style="position:relative; height: 50px; width: 100%; top:0px; left:0px; display: inline-block;"/>  ' +
     '<p style="position:relative; font-size: 18px; top: 0px; display: inline-block; padding: 10px;"> Beste ' +  val.naam +
     ', bedankt voor je reservatie. <br /> ' +
     'Wij hebben het volgende genoteerd: ' + '</p>' +
