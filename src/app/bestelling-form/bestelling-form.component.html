@@ -1,6 +1,6 @@
 <div id="mainWrapper">
   <a id="link2017" href="http://www.benefiet4lyme2017.be">Meer info</a>
-  <form id="bestelfrom" [formGroup]="bestellingForm" (ngSubmit)="onSubmit(bestellingForm.value)">
+  <form id="bestelfrom" [formGroup]="bestellingForm" (ngSubmit)="onSubmit(f.form.valid && bestellingForm.value)" #f="ngForm">
 
 
     <mat-grid-list id="list1" cols="2" rowHeight="100px">
@@ -92,7 +92,7 @@
 
 
     <mat-grid-list cols="1" rowHeight="80px">
-    <button id="submitBtn" class="submit-btn" color="primary" mat-raised-button type="submit">Verzenden</button>
+    <button id="submitBtn" class="submit-btn" color="primary" [disabled]="!f.form.valid" mat-raised-button type="submit">Verzenden</button>
     </mat-grid-list>
   </form>
 

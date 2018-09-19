@@ -23,7 +23,7 @@ export class BestellingFormComponent implements OnInit {
   private prijsKinderen = 8;
 
   bestellingForm = new FormGroup({
-    email: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
     naam: new FormControl('', Validators.required),
     totaalPersonen: new FormControl('', Validators.required),
     dag: new FormControl('', Validators.required),
@@ -49,6 +49,7 @@ export class BestellingFormComponent implements OnInit {
       this.service.createBestelling(this.bestelling);
       this.snackbar.open('U reservatie is verzonden, controleer het ingegeven email adres of deze gelukt is!', 'close');
       this.bestelling = new Bestelling();
+      this.bestellingForm.reset();
     } else {
       this.snackbar.open('U aantal personen komt niet overeen met het aantal bestelde gerechten.', 'close');
     }

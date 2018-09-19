@@ -165,6 +165,10 @@ mat-radio-button {
 
 
 }
+#submitBtn:disabled{
+  background-color: grey;
+}
+
 .mat-select-value{
   color: #3D3C3A;
   font-family: "Architects Daughter", serif;
