@@ -31,18 +31,16 @@
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-form-field>
           <mat-select ng-model="Uur" id="uur" placeholder="Uur?" class="md-no-underline" formControlName="uur">
-            <mat-option value="12-14">12u tot 14u</mat-option>
-            <mat-option value="14-16">14u tot 16u</mat-option>
-            <mat-option value="16-18">16u tot 18u</mat-option>
-            <mat-option value="18-20">18u tot 20u</mat-option>
-            <mat-option value="20-22">20u tot 22u</mat-option>
+            <mat-option *ngFor="let tijdsblok of tijdsblokken" [value]="tijdsblok">
+              {{tijdsblok}}
+            </mat-option>
           </mat-select>
         </mat-form-field>
       </mat-grid-tile>
 
       <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <mat-radio-group formControlName="dag" id="dag">
-          <mat-radio-button value="Zaterdag 13 oktober">Zaterdag 13 oktober</mat-radio-button>
+        <mat-radio-group formControlName="dag" id="dag" (change)="editTijdsblokken($event)">
+          <mat-radio-button value="Zaterdag 13 oktober" >Zaterdag 13 oktober</mat-radio-button>
           <mat-radio-button value="Zondag 14 oktober">Zondag 14 oktober</mat-radio-button>
         </mat-radio-group>
       </mat-grid-tile>

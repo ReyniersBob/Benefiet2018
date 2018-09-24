@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {BestellingService} from '../bestelling.service';
 import {Bestelling} from '../bestelling/bestelling';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {MatSnackBar} from '@angular/material';
+import {MatRadioChange, MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-bestelling-form',
@@ -32,6 +32,8 @@ export class BestellingFormComponent implements OnInit {
     aantalKinderen: new FormControl(''),
     aantalSpaghetti: new FormControl('')
   });
+  tijdsblokken: String[] = ['12u tot 14u', '14u tot 16u', '16u tot 18u', '20u tot 22u'];
+  tijdsblokkenZondag: String[] = ['12u tot 14u', '14u tot 16u', '16u tot 18u', '18u tot 20u'];
 
   constructor(private service: BestellingService, private snackbar: MatSnackBar) { }
 
@@ -65,11 +67,8 @@ export class BestellingFormComponent implements OnInit {
 
   private totaalPersonenValidatie(bestelling: Bestelling): boolean {
     const aantalKinderen = bestelling.aantalKinderen ? bestelling.aantalKinderen : 0;
-    console.log(aantalKinderen);
     const aantalSpaghetti = bestelling.aantalSpaghetti ? bestelling.aantalSpaghetti : 0;
-    console.log(aantalSpaghetti);
     const aantalVeg = bestelling.aantalVeg ? bestelling.aantalVeg : 0;
-    console.log(aantalVeg);
     const totaalPersonenReservatie = aantalKinderen + aantalSpaghetti + aantalVeg;
     const totaalPersonen = bestelling.totaalPersonen;
     return totaalPersonenReservatie === totaalPersonen;
@@ -88,5 +87,14 @@ export class BestellingFormComponent implements OnInit {
       this.totaalBedragVeggie = e.target.value * this.prijsVolwassenen;
     }
     this.totaalPrijs = this.totaalBedragKinderen + this.totaalBedragVeggie + this.totaalBedragSpaghetti;
+  }
+
+  editTijdsblokken(e: any) {
+    if (e.value === 'Zaterdag 13 oktober') {
+      this.tijdsblokken = ['12u tot 14u', '14u tot 16u', '16u tot 18u', '20u tot 22u'];
+    }
+    if (e.value === 'Zondag 14 oktober') {
+      this.tijdsblokken = this.tijdsblokkenZondag;
+    }
   }
 }
