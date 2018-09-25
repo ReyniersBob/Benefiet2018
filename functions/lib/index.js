@@ -45,7 +45,8 @@ exports.sendEmailConfirmation = functions.database.ref('/bestelling/{uid}').onWr
             '<br />Aantal veggie ' + val.aantalVeg +
             '<br />Aantal kinderen ' + val.aantalKinderen +
             '<br />Aantal spaghetti ' + val.aantalSpaghetti +
-            '<br />Totaal prijs €' + val.totaalBedrag + '</p>' +
+            '<br />Totaal prijs €' + val.totaalBedrag +
+            '<br />Email' + val.email + '</p>' +
             '<p style="position: relative; font-size: 18px;">Vriendelijke groeten <br />Benefiet4Lyme</p>' +
             '</div>';
     try {
