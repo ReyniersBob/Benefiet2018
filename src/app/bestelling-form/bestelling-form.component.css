@@ -1,8 +1,9 @@
 body{padding:0; margin: 0;
+  background-color: darkgreen;
 }
 
 #mainWrapper{
-position: absolute;
+  position: fixed;
   background-image: url('../resources/sunrise.jpeg');
   background-position: left center;
   background-repeat: no-repeat;
@@ -11,11 +12,13 @@ position: absolute;
   -moz-background-size: cover;
   -o-background-size: cover;
   width: 100%;
-  height:auto;
+  height:100%;
+  padding-bottom: 20px;
   font-family: "Architects Daughter", serif;
   color: #3D3C3A;
   left:0px;
   top:0px;
+  overflow-y: scroll;
 
 }
 iframe {
